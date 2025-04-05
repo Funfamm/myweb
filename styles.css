@@ -387,7 +387,7 @@ p{
     flex-direction: column;
     padding: 30px;
     border-radius: 10px;
-    background-image: url(Image2.JPG);
+    background-image: url(Image2.jpg);
     background-size: cover;
     margin: 10px 5%;
     position: relative;
@@ -704,207 +704,133 @@ p{
 }
 /* End keyframe */
 
-/* Media Query for Tablet*/
-@media only screen and (min-width: 768px){
-    .cta{
-            font-size: 2.5rem;
-            padding: 20px 60px;
-        }
-    h1.section-title{
-            font-size: 6rem;
-        }
+/* Mobile First Approach (default styles for mobile) */
+#header {
+    width: 100%;
+    justify-content: space-between;
+    left: 0;
+    align-items: center;
+    margin: 5px 0;
+    display: flex;
+    padding: 10px;
+}
 
-        /*hero*/
+#header .brand h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease box-shadow;
+    box-shadow: -3px 2px 12px 0px;
+}
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 600px) {
+    #header .brand h1 {
+        font-size: 2.5rem;
+        width: 60%;
+        padding: 15px;
+    }
+
+    .cta {
+        font-size: 2rem;
+        padding: 15px 40px;
+    }
+
+    h1.section-title {
+        font-size: 4rem;
+    }
+
     #hero h1 {
-        font-size: 7rem;
+        font-size: 5rem;
     }
-        /*End hero*/
+}
 
-    /*service*/
-    #services .service-bottom .service-item .service-top{
-    flex-basis: 45%;
-    margin: 2.5%; 
+/* Medium Devices (Tablet & Small Laptop) */
+@media only screen and (min-width: 768px) {
+    #services .service-bottom .service-item .service-top {
+        flex-basis: 45%;
+        margin: 2.5%;
     }
-    /*End service*/
- 
-
-    /*Project*/
-    #project .project-item{
-        flex-direction: row;
-    }
-    #project .project-item:nth-child(even){
-        flex-direction: row-reverse;
-    }
-
 
     #project .project-item {
-        height: 400px;
+        flex-direction: row;
+        height: auto;
         margin: 0;
         width: 100%;
         border-radius: 0;
     }
 
-    #project .all-project .project-info{
-        height: 100%;
+    #project .project-item:nth-child(even) {
+        flex-direction: row-reverse;
     }
 
-    #project .all-project .project-img{
-        height: 100%;
+    #about .about {
+        flex-direction: row;
     }
 
-    /*End Project*/
+    #about .col-left {
+        width: 50%;
+        padding-left: 40px;
+    }
 
-    /*About*/
+    #about .col-right {
+        font-size: 2rem;
+        padding: 20px;
+    }
 
-#about .about{
-    flex-direction: row;
-}
+    #contact .contact {
+        flex-direction: column;
+        padding: 50px 10px;
+    }
 
-#about .col-left{
-    width: 600px;
-    height: 400px;
-    padding-left: 60px;
-}
-#about .about .col-left .about-img::after{
-    left: -45px;
-    top: 34px;
-    height: 98%;
-    width: 98%;
-    border: 10px solid crimson;
-}
-#about .col-right{
-    text-align: left;
-    font-size: 3rem;
-    padding: 30px;
-}
-#about .col-right h1{
-    text-align: left;
-    font-family: 'Times New Roman', Times, serif;
+    #contact .contact-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-}
-#about .col-right p{
-    font-size: 1.56rem;
-}
-    /*End About*/
-
-    /*Contact*/
-#contact .contact {
-    flex-direction: column;
-    padding: 100px 0;
-    align-items: center;
-    justify-items: center;
-    min-width: 20vh;
-}
-#contact .contact-items{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    margin: 0;
-}
-#contact .contact-item{
-    margin: 20px;
-    flex-direction:row;
+    #contact .contact-item {
+        flex-direction: row;
+        margin: 15px;
+        width: 45%;
+    }
 }
 
-#contact .contact-item .icon{
-    height: 100px;
-    width: 100px;
-}
-#contact .contact-item .icon img{
-    object-fit: contain;
-}
-#contact .contact-item .contact-info{
-    width: 100%;
-    text-align: left;
-    padding: 20px;
-}
-
-    /*End Contact*/
-
-}
-
-/* Small devices (portrait phones, 600px+) */
-@media screen and (min-width: 600px) {
-  body {
-    font-size: 18px;
-  }
-  .container {
-    padding: 20px;
-  }
-}
-   
-/* Medium devices (tablets, 768px+) */
-@media screen and (min-width: 768px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Large devices (desktops, 992px+) */
-@media screen and (min-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-    /* Media Query for Destop*/
-@media only screen and (min-width: 1200px){
-    #header .hamburger{
+/* Desktop Devices */
+@media only screen and (min-width: 1200px) {
+    #header .hamburger {
         display: none;
-        }
+    }
+
     #header .nav-list ul {
-        position: initial;
-        display: block;
-        height: auto;
-        width: fit-content;
+        display: flex;
+        gap: 30px;
         background-color: transparent;
     }
-    #header .nav-list ul a:after{
-        display: none;
-    }
-    #header .nav-list ul li{
-        display: inline-block;
-    }
-    #header .nav-list{
-        position: initial;
-    }
-    #services .service-bottom .service-item{
+
+    #services .service-bottom .service-item {
         flex-basis: 22%;
         margin: 1.5%;
     }
- 
-}
-/* End Media Query for Destop*/
 
-@media only screen and (max-width: 480px)
- {
-    #header {
-        width: 100%;
-        justify-content: space-between;
-        left: 0;
-        align-items: center;
-        margin: 1px 0px;
-    } 
-
-    #header .brand h1 {
-        font-size: 2rem;
-        text-transform: uppercase;
-        color: white;
-        margin-top: 1px;
-        width: 60%;
-        height: 1vh;
-        text-align: center;
-        border-radius: 40px;
-        padding: 18px;
-        margin: 35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: .3s ease box-shadow;
-        box-shadow: -3px 2px 12px 0px;
+    #about .col-left {
+        width: 600px;
+        height: 400px;
     }
 
-   
+    #about .col-right p {
+        font-size: 1.56rem;
+    }
 }
+
+/* End Media Query for Destop*/
+
