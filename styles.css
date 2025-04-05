@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:300,400,700&display=swap');
 *{
     padding: 0;
@@ -823,35 +824,65 @@ p{
 
 }
 
-/* Small devices (portrait phones, 600px+) */
-@media screen and (min-width: 600px) {
-  body {
-    font-size: 18px;
-  }
-  .container {
-    padding: 20px;
-  }
+    /* End Media Query for Tablet*/
+    
+    
+    /* Media Query for Destop*/
+@media only screen and (min-width: 1200px){
+    #header .hamburger{
+        display: none;
+        }
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul a:after{
+        display: none;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list{
+        position: initial;
+    }
+    #services .service-bottom .service-item{
+        flex-basis: 22%;
+        margin: 1.5%;
+    }
+ 
 }
+/* End Media Query for Destop*/
 
-/* Medium devices (tablets, 768px+) */
-@media screen and (min-width: 768px) {
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+@media only screen and (max-width: 480px)
+ {
+    #header {
+        width: 100%;
+        justify-content: space-between;
+        left: 0;
+        align-items: center;
+        margin: 1px 0px;
+    } 
 
-/* Large devices (desktops, 992px+) */
-@media screen and (min-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+    #header .brand h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 1px;
+        width: 60%;
+        height: 1vh;
+        text-align: center;
+        border-radius: 40px;
+        padding: 18px;
+        margin: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease box-shadow;
+        box-shadow: -3px 2px 12px 0px;
+    }
 
-/* Extra large devices (1200px+) */
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-  }
+   
 }
