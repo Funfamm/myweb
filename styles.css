@@ -704,31 +704,35 @@ p{
 }
 /* End keyframe */
 
-/* Mobile First Approach (default styles for mobile) */
-#header {
-    width: 100%;
-    justify-content: space-between;
-    left: 0;
-    align-items: center;
-    margin: 5px 0;
-    display: flex;
-    padding: 10px;
-}
+@media only screen and (max-width: 480px)
+ {
+    #header {
+        width: 100%;
+        justify-content: space-between;
+        left: 0;
+        align-items: center;
+        margin: 1px 0px;
+    } 
 
-#header .brand h1 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: white;
-    margin: 10px auto;
-    width: 80%;
-    text-align: center;
-    border-radius: 40px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s ease box-shadow;
-    box-shadow: -3px 2px 12px 0px;
+    #header .brand h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 1px;
+        width: 60%;
+        height: 1vh;
+        text-align: center;
+        border-radius: 40px;
+        padding: 18px;
+        margin: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease box-shadow;
+        box-shadow: -3px 2px 12px 0px;
+    }
+
+   
 }
 
 
@@ -754,83 +758,153 @@ p{
     }
 }
 
-/* Medium Devices (Tablet & Small Laptop) */
-@media only screen and (min-width: 768px) {
-    #services .service-bottom .service-item .service-top {
-        flex-basis: 45%;
-        margin: 2.5%;
+/* Media Query for Tablet*/
+@media only screen and (min-width: 768px){
+    .cta{
+            font-size: 2.5rem;
+            padding: 20px 60px;
+        }
+    h1.section-title{
+            font-size: 6rem;
+        }
+
+        /*hero*/
+    #hero h1 {
+        font-size: 7rem;
+    }
+        /*End hero*/
+
+    /*service*/
+    #services .service-bottom .service-item .service-top{
+    flex-basis: 45%;
+    margin: 2.5%; 
+    }
+    /*End service*/
+ 
+
+    /*Project*/
+    #project .project-item{
+        flex-direction: row;
+    }
+    #project .project-item:nth-child(even){
+        flex-direction: row-reverse;
     }
 
+
     #project .project-item {
-        flex-direction: row;
-        height: auto;
+        height: 400px;
         margin: 0;
         width: 100%;
         border-radius: 0;
     }
 
-    #project .project-item:nth-child(even) {
-        flex-direction: row-reverse;
+    #project .all-project .project-info{
+        height: 100%;
     }
 
-    #about .about {
-        flex-direction: row;
+    #project .all-project .project-img{
+        height: 100%;
     }
 
-    #about .col-left {
-        width: 50%;
-        padding-left: 40px;
-    }
+    /*End Project*/
 
-    #about .col-right {
-        font-size: 2rem;
-        padding: 20px;
-    }
+    /*About*/
 
-    #contact .contact {
-        flex-direction: column;
-        padding: 50px 10px;
-    }
-
-    #contact .contact-items {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #contact .contact-item {
-        flex-direction: row;
-        margin: 15px;
-        width: 45%;
-    }
+#about .about{
+    flex-direction: row;
 }
 
-/* Desktop Devices */
-@media only screen and (min-width: 1200px) {
-    #header .hamburger {
-        display: none;
-    }
+#about .col-left{
+    width: 600px;
+    height: 400px;
+    padding-left: 60px;
+}
+#about .about .col-left .about-img::after{
+    left: -45px;
+    top: 34px;
+    height: 98%;
+    width: 98%;
+    border: 10px solid crimson;
+}
+#about .col-right{
+    text-align: left;
+    font-size: 3rem;
+    padding: 30px;
+}
+#about .col-right h1{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
 
+}
+#about .col-right p{
+    font-size: 1.56rem;
+}
+    /*End About*/
+
+    /*Contact*/
+#contact .contact {
+    flex-direction: column;
+    padding: 100px 0;
+    align-items: center;
+    justify-items: center;
+    min-width: 20vh;
+}
+#contact .contact-items{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 0;
+}
+#contact .contact-item{
+    margin: 20px;
+    flex-direction:row;
+}
+
+#contact .contact-item .icon{
+    height: 100px;
+    width: 100px;
+}
+#contact .contact-item .icon img{
+    object-fit: contain;
+}
+#contact .contact-item .contact-info{
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+    /*End Contact*/
+
+}
+
+
+    /* Media Query for Destop*/
+@media only screen and (min-width: 1200px){
+    #header .hamburger{
+        display: none;
+        }
     #header .nav-list ul {
-        display: flex;
-        gap: 30px;
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
         background-color: transparent;
     }
-
-    #services .service-bottom .service-item {
+    #header .nav-list ul a:after{
+        display: none;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list{
+        position: initial;
+    }
+    #services .service-bottom .service-item{
         flex-basis: 22%;
         margin: 1.5%;
     }
-
-    #about .col-left {
-        width: 600px;
-        height: 400px;
-    }
-
-    #about .col-right p {
-        font-size: 1.56rem;
-    }
+ 
 }
-
 /* End Media Query for Destop*/
 
