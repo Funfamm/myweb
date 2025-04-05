@@ -824,9 +824,31 @@ p{
 
 }
 
-    /* End Media Query for Tablet*/
-    
-    
+/* Small devices (portrait phones, 600px+) */
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    padding: 20px;
+  }
+}
+   
+/* Medium devices (tablets, 768px+) */
+@media screen and (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px+) */
+@media screen and (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
     /* Media Query for Destop*/
 @media only screen and (min-width: 1200px){
     #header .hamburger{
